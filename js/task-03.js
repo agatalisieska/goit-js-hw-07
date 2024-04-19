@@ -20,7 +20,7 @@ const imagesHTML = images
   .map(
     (image) =>
       `<li>
-      <img src="${image.url}" alt = "${image.alt}">
+      <img src="${image.url}" alt= "${image.alt}" width="80%">
     </li>`
   )
   .join("");
@@ -32,4 +32,4 @@ gallery.insertAdjacentHTML("beforeend", imagesHTML);
 // dodaję style do galerii
 
 gallery.style.display = "flex";
-gallery.style.gap = "150px";
+gallery.style.gap = "15px";

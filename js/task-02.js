@@ -12,16 +12,21 @@ const ingredients = [
 const list = document.querySelector("#ingredients");
 //console.log(list);
 
-// odwołuję sie do tablicy ingredients
-ingredients.forEach((ingredient) => {
+// odwołuję sie do tablicy ingredients, przy użyciu metody map odwołuję się
+//do każdego z elemtenów tablicy po kolei
+const item = ingredients.map((ingredient) => {
   // dla każdego składnika tworzymy element li
   const lastItem = document.createElement("li");
   // tekstem w li ma być nazwa każdego z elementów tablicy ingredients
   lastItem.textContent = ingredient;
   // dodaję klasę item
   lastItem.classList.add("item");
-  //każdy ze składników dodaję na koniec listy
-  list.append(lastItem);
-  //wyświetlam całą listę
-  console.log(lastItem);
+  // zwracam 'lastItem'
+  return lastItem;
 });
+
+//każdy ze składników dodaję na koniec listy
+list.append(...item);
+
+//wyświetlam całą tablice
+console.log(item);
